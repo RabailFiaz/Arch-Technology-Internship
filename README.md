@@ -1,52 +1,108 @@
-# Arch-Technology-Internship
-This repository contains two interactive machine learning web applications developed using **Streamlit** and designed to run both **locally** and on **Google Colab with ngrok tunneling**.
+# 🧠 Machine Learning Internship Projects  
 
-## 📌 Projects Included
+This repository contains **four machine learning projects** developed during the internship.  
+They are divided into two folders:  
 
-
-### 1. 📧 Email Spam Detector
-A basic spam classifier that identifies whether an input email message is **Spam** or **Not Spam** using text classification.
-
-#### 🔧 Features
-- Input a full email or message
-- Uses CountVectorizer + Multinomial Naive Bayes
-- Instant spam classification
+- 📂 **Arch-Technology-Internship** → Interactive web apps (Streamlit + Colab ngrok)  
+- 📂 **Month2** → Core ML models (Housing Price Prediction + Iris Flower Classification)  
 
 ---
 
-### 2. 🖍️ MNIST Digit Recognizer
-An interactive web app that uses a Convolutional Neural Network (CNN) trained on the **MNIST dataset** to recognize handwritten digits (0-9) drawn by the user.
+## 📌 Projects Included  
 
-#### 🔧 Features
-- Draw a digit on a canvas (live in browser)
-- Preprocesses the input image
-- Predicts using a trained CNN model
-- Real-time classification (0–9)
+### 📂 Arch-Technology-Internship  
+
+#### 1. 📧 Email Spam Detector  
+A basic spam classifier that identifies whether an input email message is **Spam** or **Not Spam** using text classification.  
+
+**Features**  
+- Input a full email or message  
+- Uses **CountVectorizer + Multinomial Naive Bayes**  
+- Instant spam classification  
 
 ---
 
+#### 2. 🖍️ MNIST Digit Recognizer  
+An interactive web app that uses a **Convolutional Neural Network (CNN)** trained on the **MNIST dataset** to recognize handwritten digits (0–9) drawn by the user.  
 
-## 🚀 Running the Apps
+**Features**  
+- Draw a digit on a canvas (live in browser)  
+- Preprocesses the input image  
+- Predicts using a trained CNN model  
+- Real-time classification (0–9)  
 
-### ✅ Option 1: Run Locally
+---
 
-#### Step 1: Clone the repository
+### 📂 Month2  
+
+#### 3. 🏠 California Housing Price Prediction  
+A regression model that predicts **median house prices** in California based on features like **income, number of rooms, population, and location**.  
+
+**Models Used**  
+- Linear Regression  
+- Random Forest Regressor  
+
+**Evaluation Metrics**  
+- RMSE (Root Mean Squared Error)  
+- R² Score  
+
+**Key Insights**  
+- Median income is the strongest predictor.  
+- Random Forest outperforms Linear Regression with better accuracy.  
+
+---
+
+#### 4. 🌸 Iris Flower Classification  
+A classification model to predict **iris species** (Setosa, Versicolor, Virginica) using **sepal length, sepal width, petal length, and petal width**.  
+
+**Models Used**  
+- Logistic Regression  
+- K-Nearest Neighbors (KNN)  
+- Decision Tree  
+
+**Evaluation Metrics**  
+- Accuracy  
+- Confusion Matrix  
+- Classification Report  
+
+**Key Insights**  
+- KNN performed best (~98% accuracy).  
+- Setosa is always classified correctly; most misclassifications occur between Versicolor and Virginica.  
+
+---
+
+## 🚀 Running the Apps  
+
+### ✅ Option 1: Run Locally  
 ```bash
 git clone https://github.com/RabailFiaz/Arch-Technology-Internship.git
 cd Arch-Technology-Internship
-```
-#### Step 2: Install dependencies
-```bash
 pip install -r requirements.txt
 ```
 
-#### Step 3: Run the app
+## Run Streamlit Apps (Arch Tech Internship)
 ```bash
 # For Email Spam Detector
-streamlit app.py
+cd "Arch-Technology-Internship/Email spam Detection"
+streamlit run app.py
+
+# For MNIST Digit Recognizer
+cd "Arch-Technology-Internship/Mnist Digit Recognition"
+streamlit run app.py
 ```
-#### OR
-#### Run on Google Colab
+## Run Month2
+```bash
+# Housing Price Prediction
+cd Month2
+python task3.ipynb
+
+# Iris Classification
+cd Month2
+python task4.ipynb
+
+```
+
+## Option 2: Run on Google Colab (Arch Tech Internship apps)
 ```bash
 !pip install streamlit pyngrok
 from pyngrok import ngrok
@@ -55,53 +111,36 @@ from pyngrok import ngrok
 ngrok.kill()
 
 # Launch the app
-!streamlit run Digit Recognition.ipynb &>/content/log.txt &
+!streamlit run Digit_Recognition.ipynb &>/content/log.txt &
 
 # Create public URL
 public_url = ngrok.connect(port='8501')
 print(f"🔗 App is live at: {public_url}")
 ```
-
-#### 📁 Project Structure
-📦 Arch Tech Internship/
-├── Mnist Digit Recognition             
-├── Email spam Detection         
-└── README.md
-
-#### 📊 Models Used
-- MNIST Digit Recognizer: Keras CNN (trained on tensorflow.keras.datasets.mnist)
-- Spam Detector: Scikit-learn's MultinomialNB with CountVectorizer
-
-#### 🛠️ Requirements
-
-streamlit
-pyngrok
-numpy
-tensorflow
-pandas
-scikit-learn
-Pillow
+## 📁 Project Structure
+📦 Arch-Technology-Internships/
+├── Arch-Technology-Internship/
+│   ├── Mnist Digit Recognition
+│   ├── Email spam Detection
+│   └── README.md
+│
+├── Month2/
+│   ├── task3.ipynb
+│   ├── task4.ipynb
+│   └── README.md
 
 
-#### 📜 License
-MIT License. Feel free to use, modify, and share!
 
+## 📜 License
 
-#### 🙌 Acknowledgements
+MIT License – feel free to use, modify, and share!
 
+## 🙌 Acknowledgements
 MNIST Dataset
-Streamlit
+Iris Dataset (UCI Machine Learning Repository)
 Scikit-learn
+TensorFlow / Keras
+Streamlit
 Pyngrok
-
-
----
-
-Let me know if you'd like:
-- A sample `requirements.txt`
-- Screenshots added to this README
-- A GitHub repository name suggestion
-
-I'm happy to help set up a complete GitHub push-ready structure.
 
 
